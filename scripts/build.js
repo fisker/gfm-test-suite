@@ -35,8 +35,12 @@ function parseSpec(html) {
     const exampleId = example.attribs.id
     assert.ok(/^example-\d+$/.test(exampleId))
     const exampleNumber = Number(exampleId.slice('example-'.length))
-    const section = $(getSection(example)).text()
-
+    const section = Array.from(getSection(example).children, (node) =>
+      $(node).text(),
+    )
+      .join(' ')
+      .replaceAll(/\s+/g, ' ')
+      .trim()
     testCases.push({
       section,
       example: exampleNumber,
