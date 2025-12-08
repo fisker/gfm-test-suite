@@ -1,10 +1,7 @@
 import assert from 'node:assert'
-import fs from 'node:fs/promises'
-import {inspect} from 'node:util'
 import * as cheerio from 'cheerio'
-import {outdent} from 'outdent'
 import writePrettierFile from 'write-prettier-file'
-import {downloadText, writeTextFile} from './utilities.js'
+import {downloadText} from './utilities.js'
 
 const SPEC_URL = new URL('https://github.github.com/gfm/')
 const CACHE_DIRECTORY = new URL('../.cache/', import.meta.url)
