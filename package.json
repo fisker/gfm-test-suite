@@ -25,8 +25,7 @@
   },
   "files": [
     "index.js",
-    "index.d.ts",
-    "index.json"
+    "index.d.ts"
   ],
   "scripts": {
     "build": "node ./scripts/build.js",

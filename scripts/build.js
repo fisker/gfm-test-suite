@@ -56,6 +56,6 @@ const text = await downloadText(
 const data = parseSpec(text)
 
 await writePrettierFile(
-  new URL('../index.json', import.meta.url),
-  JSON.stringify(data, undefined, 2),
+  new URL('../index.js', import.meta.url),
+  `export default ${JSON.stringify(data, undefined, 2)}`,
 )
